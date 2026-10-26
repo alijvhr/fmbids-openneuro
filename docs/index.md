@@ -69,6 +69,7 @@ In addition to the web interface, fmbids-openneuro provides three ways of intera
 packages/openneuro-cli
 api
 git
+fair-mbids
 ```
 
 The {abbr}`CLI (command-line interface)` allows for data upload and download from the terminal,
