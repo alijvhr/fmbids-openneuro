@@ -23,6 +23,7 @@ import "./schema/draft"
 import "./schema/snapshot"
 import "./schema/dataset"
 import "./schema/dataset-search"
+import "./schema/fairmbids-search"
 import "./schema/query"
 import "./schema/mutation"
 
