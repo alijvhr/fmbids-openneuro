@@ -70,6 +70,7 @@ packages/openneuro-cli
 api
 git
 fair-mbids
+fair-mbids-search
 ```
 
 The {abbr}`CLI (command-line interface)` allows for data upload and download from the terminal,
