@@ -113,7 +113,7 @@ services:
     platform: linux/amd64
     build:
       context: services/datalad
-      platform: linux/amd64
+      platforms: [linux/amd64]
     volumes:
       - ${PERSISTENT_DIR}/datalad:/datalad:z
       - ./services/datalad/datalad_service:/srv/datalad_service
@@ -147,7 +147,7 @@ services:
     platform: linux/amd64
     build:
       context: services/datalad
-      platform: linux/amd64
+      platforms: [linux/amd64]
     volumes:
       - ${PERSISTENT_DIR}/datalad:/datalad:z
       - ./services/datalad/datalad_service:/srv/datalad_service
@@ -176,7 +176,7 @@ services:
     platform: linux/amd64
     build:
       context: services/datalad
-      platform: linux/amd64
+      platforms: [linux/amd64]
     volumes:
       - ${PERSISTENT_DIR}/datalad:/datalad:z
       - ./services/datalad/datalad_service:/srv/datalad_service
