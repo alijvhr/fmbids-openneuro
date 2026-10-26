@@ -1,0 +1,50 @@
+{
+  "dynamic": "strict",
+  "properties": {
+    "subject_key": { "type": "keyword" },
+    "dataset_id": { "type": "keyword" },
+    "snapshot_tag": { "type": "keyword" },
+    "public": { "type": "boolean" },
+    "participant_id": { "type": "keyword" },
+    "demographics": {
+      "properties": {
+        "age": { "type": "float" },
+        "sex": { "type": "keyword" },
+        "group": { "type": "keyword" }
+      }
+    },
+    "session_count": { "type": "integer" },
+    "span_days": { "type": "integer" },
+    "modality_set": { "type": "keyword" },
+    "sessions": {
+      "type": "nested",
+      "properties": {
+        "session_id": { "type": "keyword" },
+        "session_order": { "type": "integer" },
+        "relative_time_days": { "type": "integer" },
+        "modalities": { "type": "keyword" }
+      }
+    },
+    "modality_session_counts": {
+      "type": "nested",
+      "properties": {
+        "modality": { "type": "keyword" },
+        "session_count": { "type": "integer" }
+      }
+    },
+    "metadata_flags": {
+      "properties": {
+        "has_age": { "type": "boolean" },
+        "has_sex": { "type": "boolean" },
+        "has_session_time": { "type": "boolean" },
+        "has_modality": { "type": "boolean" }
+      }
+    },
+    "linkage": {
+      "properties": {
+        "token": { "type": "keyword" },
+        "token_version": { "type": "keyword" }
+      }
+    }
+  }
+}

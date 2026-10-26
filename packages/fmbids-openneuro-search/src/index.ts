@@ -1,4 +1,5 @@
 import { DatasetsIndex } from "./indexes/datasets"
+import { FairMBidsSubjectsIndex } from "./indexes/fairmbids-subjects"
 import {
   DatasetQueryResult,
   indexDataset,
@@ -9,6 +10,7 @@ import { indexingToken } from "./auth"
 export {
   DatasetQueryResult,
   DatasetsIndex,
+  FairMBidsSubjectsIndex,
   indexDataset,
   indexingToken,
   indexQuery,

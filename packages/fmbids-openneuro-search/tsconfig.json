@@ -9,5 +9,8 @@
   "extends": "../../tsconfig.json",
   "include": ["./src"],
   "exclude": ["node_modules", "**/*.spec.ts"],
-  "files": ["./src/mappings/datasets-mapping.json"]
+  "files": [
+    "./src/mappings/datasets-mapping.json",
+    "./src/mappings/fairmbids-subjects-mapping.json"
+  ]
 }
