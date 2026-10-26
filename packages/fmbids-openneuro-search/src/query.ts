@@ -3,6 +3,7 @@ import type { Client as ElasticClient } from "@elastic/elasticsearch"
 import type { ApolloClient, NormalizedCacheObject } from "@apollo/client"
 import { gql } from "@apollo/client"
 import { DatasetsIndex } from "./indexes/datasets"
+import { indexFairMBidsSubjects } from "./fairmbids"
 
 export const INDEX_DATASET_FRAGMENT = gql`
   fragment DatasetIndex on Dataset {
@@ -183,6 +184,12 @@ export async function indexDataset(
     const response = await elasticClient.index(
       extractDatasetDocument(datasetObj),
     )
+    try {
+      await indexFairMBidsSubjects(elasticClient, datasetObj)
+    } catch (err) {
+      // FAIR m-BIDS indexing must never block dataset search indexing
+      console.dir(err)
+    }
     return response
   } catch (err) {
     console.dir(err)
