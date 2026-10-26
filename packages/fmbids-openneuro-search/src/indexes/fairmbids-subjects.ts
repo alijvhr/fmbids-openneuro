@@ -2,7 +2,7 @@ import fairMBidsSubjectsMapping from "../mappings/fairmbids-subjects-mapping.jso
 import { elasticMappingName } from "../names"
 
 /** One document per dataset-local subject of a FAIR m-BIDS snapshot */
-export const FairMBidsSubjectsIndex = {
+export const FairMBidsSubjectsIndex: { name: string; mapping: Record<string, unknown> } = {
   name: elasticMappingName("fairmbids-subjects", fairMBidsSubjectsMapping),
   mapping: fairMBidsSubjectsMapping,
 }
