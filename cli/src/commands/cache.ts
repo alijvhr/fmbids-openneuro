@@ -41,7 +41,7 @@ export const cacheClean = new Command()
   .option("-d, --dry-run", "List cached directories without deleting them.")
   .option(
     "-u, --url <url:string>",
-    "Clear cache for a specific OpenNeuro instance URL.",
+    "Clear cache for a specific fmbids-openneuro instance URL.",
   )
   .action(cacheCleanAction)
 

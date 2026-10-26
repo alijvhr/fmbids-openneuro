@@ -1,11 +1,11 @@
-# [OpenNeuro](https://openneuro.org)
+# [fmbids-openneuro](https://openneuro.org)
 
 [![CodeCov Coverage Status](https://codecov.io/gh/OpenNeuroOrg/openneuro/branch/master/graph/badge.svg)](https://codecov.io/gh/OpenNeuroOrg/openneuro)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 ## About
 
-OpenNeuro is a free and open platform for analyzing and sharing neuroimaging data. It is based around the [Brain Imaging Data Structure specification](http://bids.neuroimaging.io/).
+fmbids-openneuro is a free and open platform for analyzing and sharing neuroimaging data. It is based around the [Brain Imaging Data Structure specification](http://bids.neuroimaging.io/).
 
 ## Development setup
 
@@ -64,15 +64,15 @@ For example, you can restart the server container with `podman-compose restart s
 
 ## Major Components
 
-- [OpenNeuro app](https://github.com/OpenNeuroOrg/openneuro/tree/master/packages/openneuro-app) - React frontend
-- [OpenNeuro server](https://github.com/OpenNeuroOrg/openneuro/tree/master/packages/openneuro-server) - Node.js GraphQL API
-- [OpenNeuro indexer](https://github.com/OpenNeuroOrg/openneuro/tree/master/packages/openneuro-indexer) - ElasticSearch indexer
-- [OpenNeuro command line tools](https://github.com/OpenNeuroOrg/openneuro/tree/master/cli) - Deno command line tools for uploading and downloading datasets
+- [fmbids-openneuro app](https://github.com/alijvhr/fmbids-openneuro/tree/master/packages/fmbids-openneuro-app) - React frontend
+- [fmbids-openneuro server](https://github.com/alijvhr/fmbids-openneuro/tree/master/packages/fmbids-openneuro-server) - Node.js GraphQL API
+- [fmbids-openneuro indexer](https://github.com/alijvhr/fmbids-openneuro/tree/master/packages/fmbids-openneuro-indexer) - ElasticSearch indexer
+- [fmbids-openneuro command line tools](https://github.com/alijvhr/fmbids-openneuro/tree/master/cli) - Deno command line tools for uploading and downloading datasets
 - [DataLad service](https://github.com/OpenNeuroOrg/datalad-service) - [DataLad](http://datalad.org/) compatible dataset worker microservice
 - [bids-validator](https://github.com/bids-standard/bids-validator) - BIDS validation library
 
 JavaScript packages are published in the `@openneuro` npm namespace.
 
-## OpenNeuro Command-line utility tool
+## fmbids-openneuro Command-line utility tool
 
-OpenNeuro supports a [CLI tool](https://docs.openneuro.org/openneuro-packages-openneuro-cli-readme) based on [nodejs](https://nodejs.org/en/) for uploading and downloading OpenNeuro datasets.
+fmbids-openneuro supports a [CLI tool](https://docs.openneuro.org/openneuro-packages-openneuro-cli-readme) based on [nodejs](https://nodejs.org/en/) for uploading and downloading fmbids-openneuro datasets.

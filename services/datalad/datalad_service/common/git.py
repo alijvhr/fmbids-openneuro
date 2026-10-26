@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 
 
 class OpenNeuroGitError(Exception):
-    """OpenNeuro git repo states that should not arise under normal use but may be a valid git operation in other contexts."""
+    """fmbids-openneuro git repo states that should not arise under normal use but may be a valid git operation in other contexts."""
 
 
 def git_show(repo, committish, obj):
@@ -203,7 +203,7 @@ async def _normalize_line_endings_in_file(full_path, repo_temp_path):
 
 
 async def git_commit(
-    repo, file_paths, author=None, message='[OpenNeuro] Recorded changes', parents=None
+    repo, file_paths, author=None, message='[fmbids-openneuro] Recorded changes', parents=None
 ):
     """Commit array of paths at HEAD."""
     # master -> main if required
@@ -257,7 +257,7 @@ async def git_commit(
 
 
 async def git_commit_index(
-    repo, author=None, message='[OpenNeuro] Recorded changes', parents=None
+    repo, author=None, message='[fmbids-openneuro] Recorded changes', parents=None
 ):
     """Commit any existing index changes."""
     committer = pygit2.Signature(COMMITTER_NAME, COMMITTER_EMAIL)

@@ -10,7 +10,7 @@ DATALAD_GITHUB_TOKEN = os.getenv('DATALAD_GITHUB_TOKEN')
 DATALAD_GITHUB_EXPORTS_ENABLED = os.getenv('DATALAD_GITHUB_EXPORTS_ENABLED')
 DATALAD_DATASET_PATH = os.getenv('DATALAD_DATASET_PATH')
 
-# Configuration shared with OpenNeuro or AWS CLI
+# Configuration shared with fmbids-openneuro or AWS CLI
 AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
 AWS_REGION = os.getenv('AWS_REGION')

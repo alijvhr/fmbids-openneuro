@@ -22,13 +22,13 @@ export class GitWorkerContext {
   // Current working dataset ID
   constructor(
     public datasetId: string,
-    // The path being uploaded from to OpenNeuro
+    // The path being uploaded from to fmbids-openneuro
     public sourcePath: string,
     // The path of our local clone (possibly in virtual fs)
     public repoPath: string,
     // URL for the remote git repo
     public repoEndpoint: string,
-    // OpenNeuro git access short lived API key
+    // fmbids-openneuro git access short lived API key
     public authorization: string,
   ) {}
 

@@ -67,7 +67,7 @@ async def create_dataset(dataset_path, author=None, initial_head='main'):
         repo,
         ['.gitattributes', '.datalad/config'],
         author,
-        '[OpenNeuro] Dataset created',
+        '[fmbids-openneuro] Dataset created',
         parents=[],
     )
     create_remotes(dataset_path)

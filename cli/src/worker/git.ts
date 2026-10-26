@@ -267,7 +267,7 @@ async function remoteSetup(event: GitWorkerEventRemoteSetup) {
  */
 async function commitAnnexBranch(version?: string) {
   // Find the UUID of this repository if it exists already
-  const expectedRemote = "OpenNeuro" // TODO - This could be more flexible?
+  const expectedRemote = "fmbids-openneuro" // TODO - This could be more flexible?
   let uuid
   let uuidLog = ""
   try {
@@ -336,11 +336,11 @@ async function commitAnnexBranch(version?: string) {
   if (changes) {
     // Show a better commit message for when only the remote is updated
     if (Object.keys(annexKeys).length === 0) {
-      await builder.commit("git-annex", "[OpenNeuro CLI] Configured remote")
+      await builder.commit("git-annex", "[fmbids-openneuro CLI] Configured remote")
     } else {
       await builder.commit(
         "git-annex",
-        "[OpenNeuro CLI] Added annexed objects",
+        "[fmbids-openneuro CLI] Added annexed objects",
       )
     }
   }
@@ -387,7 +387,7 @@ async function commit() {
     const commitHash = await git.commit({
       ...options,
       author: context.author,
-      message: "[OpenNeuro] Added local files",
+      message: "[fmbids-openneuro] Added local files",
     })
     await commitAnnexBranch()
     logger.info(`Committed as "${commitHash}"`)

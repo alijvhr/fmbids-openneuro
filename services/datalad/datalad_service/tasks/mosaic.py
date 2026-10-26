@@ -32,7 +32,7 @@ def get_mosaic_path(dataset_id, repo, commit):
 
 def mosaic_mutation(dataset_id, ref):
     """
-    Return the OpenNeuro mutation to update the snapshot mosaic.
+    Return the fmbids-openneuro mutation to update the snapshot mosaic.
     """
     mosaicInput = {
         'datasetId': dataset_id,

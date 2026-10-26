@@ -287,7 +287,7 @@ async def annex_drop(dataset_path, branches):
     """Drop local contents from the annex."""
     # Ensure numcopies is set to 2 before running drop
     await run_check(['git-annex', 'numcopies', '2'], dataset_path)
-    # Early versions of OpenNeuro used an s3-PRIVATE remote
+    # Early versions of fmbids-openneuro used an s3-PRIVATE remote
     # Mark it dead before dropping to avoid counting it in numcopies
     try:
         await run_check(['git-annex', 'dead', 's3-PRIVATE'], dataset_path)

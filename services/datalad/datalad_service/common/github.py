@@ -46,9 +46,9 @@ def github_export(dataset_id, dataset_path, tag):
 
 def github_format_description(dataset_name=None):
     if dataset_name:
-        return f'OpenNeuro dataset - {dataset_name}'
+        return f'fmbids-openneuro dataset - {dataset_name}'
     else:
-        return 'OpenNeuro dataset'
+        return 'fmbids-openneuro dataset'
 
 
 def github_set_repo_config(dataset_id, dataset_name=None):

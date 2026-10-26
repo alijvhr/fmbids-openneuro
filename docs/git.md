@@ -3,7 +3,7 @@ name: Git Access
 route: /git
 ---
 
-# Git access to OpenNeuro datasets
+# Git access to fmbids-openneuro datasets
 
 The underlying format for dataset is a git-annex repo created with datalad. Every dataset tracks changes as commits and snapshots are stored as git tags.
 
@@ -13,7 +13,7 @@ Datasets support clones, pushes, and other git operations. All datasets require 
 
 A dataset must always be present in the root level of the repository.
 
-OpenNeuro validates the size of regular git (non-annexed) files and a subset of bids-validation before accepting a git push. It is important to annex any large files in any commits before pushing. `.bidsignore` must always be a regular file. Some features are only available for regular files (such as diffing) and textual data is generally best kept as regular git objects.
+fmbids-openneuro validates the size of regular git (non-annexed) files and a subset of bids-validation before accepting a git push. It is important to annex any large files in any commits before pushing. `.bidsignore` must always be a regular file. Some features are only available for regular files (such as diffing) and textual data is generally best kept as regular git objects.
 
 A recommended `.gitattributes` configuration for git-annex to automate annexing the correct files when using `git add` or `datalad save`
 
@@ -34,7 +34,7 @@ LICENSE annex.largefiles=nothing
 
 ## Credential Helper
 
-Using [@openneuro/cli](https://jsr.io/@openneuro/cli), git can be configured to automatically use your OpenNeuro credentials to allow access to datasets. This is the preferred method for authenticating regular git access. An advanced method of issuing a key is documented below if you cannot use the [git credential helper](https://git-scm.com/docs/gitcredentials) for your use case.
+Using [@openneuro/cli](https://jsr.io/@openneuro/cli), git can be configured to automatically use your fmbids-openneuro credentials to allow access to datasets. This is the preferred method for authenticating regular git access. An advanced method of issuing a key is documented below if you cannot use the [git credential helper](https://git-scm.com/docs/gitcredentials) for your use case.
 
 ### Setup
 
@@ -45,7 +45,7 @@ Once you have logged in with `deno run -A jsr:@openneuro/cli`, you can configure
 git config --global credential.https://openneuro.org.useHttpPath true
 # Point git at the @openneuro/cli tool (this must be an absolute path)
 git config --global credential.https://openneuro.org.helper "/path/to/deno -A jsr:@openneuro/cli git-credential"
-# For OpenNeuro instances other than https://openneuro.org
+# For fmbids-openneuro instances other than https://openneuro.org
 git config --global credential.https://staging.openneuro.org.helper "/path/to/deno -A jsr:@openneuro/cli git-credential --url https://staging.openneuro.org"
 ```
 
@@ -76,12 +76,12 @@ git clone https://openneuro.org/api/git/ds0000001
 # Or datalad install
 datalad install https://openneuro.org/api/git/ds0000001
 cd ds0000001
-# From here you can treat this like a datalad dataset and export back to OpenNeuro to deploy changes
+# From here you can treat this like a datalad dataset and export back to fmbids-openneuro to deploy changes
 ```
 
-When you are ready to push changes, make sure to validate them before attempting to push. OpenNeuro runs a limited version of BIDS validation on pushes and will reject datasets that cannot pass validation of the file tree. File contents are validated only after upload.
+When you are ready to push changes, make sure to validate them before attempting to push. fmbids-openneuro runs a limited version of BIDS validation on pushes and will reject datasets that cannot pass validation of the file tree. File contents are validated only after upload.
 
-To push annexed files, see `Configuring OpenNeuro special remote` below.
+To push annexed files, see `Configuring fmbids-openneuro special remote` below.
 
 ### Advanced authentication
 
@@ -97,15 +97,15 @@ EOF
 
 ## Snapshots
 
-Snapshots are represented as git tags. To use all OpenNeuro features, you must have at least one tag with a valid semantic versioning name. This is typically `1.0.0` but can be any valid numeric semantic version.
+Snapshots are represented as git tags. To use all fmbids-openneuro features, you must have at least one tag with a valid semantic versioning name. This is typically `1.0.0` but can be any valid numeric semantic version.
 
 ## git-annex special remote
 
 Direct access can clone, push, and pull dataset contents but it does not transfer annexed objects on its own. For public datasets, the annexed objects are available with a preconfigured remote on S3 shortly after the dataset is made public or a new snapshot is created if the dataset is already public.
 
-For private datasets or to add new data with DataLad or git-annex, a special remote is available to push data directly to OpenNeuro.
+For private datasets or to add new data with DataLad or git-annex, a special remote is available to push data directly to fmbids-openneuro.
 
-### Configuring OpenNeuro special remote
+### Configuring fmbids-openneuro special remote
 
 ```shell
 # A script is provided to wrap the CLI as a special remote
@@ -130,7 +130,7 @@ echo "EXTENSIONS" | deno run -A jsr:@openneuro/cli special-remote
 git annex initremote openneuro type=external externaltype=openneuro encryption=none url=https://openneuro.org/api/git/ds0000001
 ```
 
-To download annexed objects from the remote, you may need to manually ask git-annex update the local state of the OpenNeuro remote. You can force this update for all files:
+To download annexed objects from the remote, you may need to manually ask git-annex update the local state of the fmbids-openneuro remote. You can force this update for all files:
 
 ```shell
 git annex fsck --fast --from openneuro

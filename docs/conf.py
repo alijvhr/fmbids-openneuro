@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'OpenNeuro'
+project = 'fmbids-openneuro'
 copyright = '2015-2025, Stanford Center for Reproducible Neuroscience'
 author = 'Stanford Center for Reproducible Neuroscience'
 

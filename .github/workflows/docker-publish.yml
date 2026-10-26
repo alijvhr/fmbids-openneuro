@@ -20,7 +20,7 @@ jobs:
         id: build-docker-image
         run: |
           docker build -t openneuro/node:latest .
-          docker build -t openneuro/server:${{ github.ref_name }} packages/openneuro-server
+          docker build -t openneuro/server:${{ github.ref_name }} packages/fmbids-openneuro-server
       - name: push the docker image
         id: push-docker-image
         run: docker push openneuro/server:${{ github.ref_name }}
@@ -40,7 +40,7 @@ jobs:
         id: build-docker-image
         run: |
           docker build -t openneuro/node:latest .
-          docker build -t openneuro/app:${{ github.ref_name }} packages/openneuro-app
+          docker build -t openneuro/app:${{ github.ref_name }} packages/fmbids-openneuro-app
       - name: push the docker image
         id: push-docker-image
         run: docker push openneuro/app:${{ github.ref_name }}
@@ -60,7 +60,7 @@ jobs:
         id: build-docker-image
         run: |
           docker build -t openneuro/node:latest .
-          docker build -t openneuro/indexer:${{ github.ref_name }} packages/openneuro-indexer
+          docker build -t openneuro/indexer:${{ github.ref_name }} packages/fmbids-openneuro-indexer
       - name: push the docker image
         id: push-docker-image
         run: docker push openneuro/indexer:${{ github.ref_name }}

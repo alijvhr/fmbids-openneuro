@@ -7,7 +7,7 @@ route: /api
 
 ## GraphQL Playground
 
-If you visit the [OpenNeuro API endpoint](https://openneuro.org/crn/graphql) in a browser, you can write queries with an interactive tool. This will automatically use your OpenNeuro account for authentication if you have recently authenticated with OpenNeuro on the web.
+If you visit the [fmbids-openneuro API endpoint](https://openneuro.org/crn/graphql) in a browser, you can write queries with an interactive tool. This will automatically use your fmbids-openneuro account for authentication if you have recently authenticated with fmbids-openneuro on the web.
 
 ## GraphQL basics
 
@@ -15,7 +15,7 @@ A basic introduction to GraphQL can be found in the [official documentation](htt
 
 GraphQL divides operations into queries, mutations, and a few more rarely used types like subscriptions. A query will return the same result if repeated, mutations will take some action that will be reflected in future queries.
 
-OpenNeuro has several top level types with many fields available to query. Most information is available under the Dataset and Snapshot types.
+fmbids-openneuro has several top level types with many fields available to query. Most information is available under the Dataset and Snapshot types.
 
 ## Example Queries
 

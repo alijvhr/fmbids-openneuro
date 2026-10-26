@@ -1,11 +1,11 @@
 # Data Retention Policies
 
-OpenNeuro has a data retention policy in place to ensure the maintainability of
+fmbids-openneuro has a data retention policy in place to ensure the maintainability of
 and prevent abuse of the service.
 
 ## Data storage
 
-OpenNeuro datasets are stored as git/git-annex repositories on Google Cloud storage
+fmbids-openneuro datasets are stored as git/git-annex repositories on Google Cloud storage
 media. Small files are included as git objects, while large files are added to the
 annex. On each snapshot, a tag is made in the git repository, and copies of all files
 are synchronized to an Amazon Web Services S3 bucket. This S3 bucket is used as a
@@ -24,17 +24,17 @@ that have changed from one day to the next, ensuring the recoverability of corru
 
 ## Backups
 
-OpenNeuro uses daily incremental backups of all datasets to ensure integrity and
+fmbids-openneuro uses daily incremental backups of all datasets to ensure integrity and
 availability.
 
 ## Data administration and deletion
 
 In order to ensure the high availability of uploaded datasets and prevent abuse of the
-service, OpenNeuro may delete data under certain conditions.
+service, fmbids-openneuro may delete data under certain conditions.
 
 ### Automatic deletion
 
-OpenNeuro reservces the right to delete draft data following a 28-day grace period.
+fmbids-openneuro reservces the right to delete draft data following a 28-day grace period.
 
 Draft data is any data that is not included in a versioned snapshot. When a dataset
 is first uploaded, it is placed in draft status, and the entire dataset is subject
@@ -52,16 +52,16 @@ was temporarily accessible.
 
 ### Manual review and deletion
 
-OpenNeuro makes use of a `.bidsignore` file to allow dataset owners to upload datasets
+fmbids-openneuro makes use of a `.bidsignore` file to allow dataset owners to upload datasets
 that include files that are not standardized. This mechanism is intended to ensure that
 datasets may be uploaded with all available information despite gaps in definitions in
 the BIDS standard.
 
 However, this mechanism can potentially be used to store datasets that simply do not
 conform to the BIDS standard, which is an abuse of the terms of service.
-Any suspected abuse will be manually reviewed, and OpenNeuro may take steps to remediate
+Any suspected abuse will be manually reviewed, and fmbids-openneuro may take steps to remediate
 the abuse.
 These steps may range from consultation with uploaders to correct the dataset to summary
 deletion of datasets.
-OpenNeuro may implement at any time mechanisms to automatically detect potential abuses
+fmbids-openneuro may implement at any time mechanisms to automatically detect potential abuses
 and flag them for manual review and deletion.

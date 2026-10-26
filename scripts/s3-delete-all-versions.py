@@ -94,7 +94,7 @@ def load_env_config() -> AWSConfig:
 def main(
     folder: ty.Annotated[str, typer.Option(help="Your folder within your S3 Bucket")],
     config: ty.Annotated[
-        Path | None, typer.Option(help="Path to OpenNeuro secrets file")
+        Path | None, typer.Option(help="Path to fmbids-openneuro secrets file")
     ] = None,
     env: ty.Annotated[
         bool, typer.Option(help="Read AWS secrets from environment")

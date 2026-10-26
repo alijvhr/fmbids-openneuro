@@ -1,5 +1,5 @@
 /**
- * Configure credentials and other persistent settings for OpenNeuro
+ * Configure credentials and other persistent settings for fmbids-openneuro
  */
 import { Command } from "@cliffy/command"
 import type { CommandOptions } from "@cliffy/command"
@@ -9,10 +9,10 @@ import { getConfigPath } from "../config.ts"
 
 const messages = {
   url:
-    "URL for OpenNeuro instance to upload to (e.g. `https://openneuro.org`).",
-  token: "API key for OpenNeuro. See https://openneuro.org/keygen",
+    "URL for fmbids-openneuro instance to upload to (e.g. `https://openneuro.org`).",
+  token: "API key for fmbids-openneuro. See https://openneuro.org/keygen",
   errorReporting:
-    "Enable error reporting. Errors and performance metrics are sent to the configured OpenNeuro instance.",
+    "Enable error reporting. Errors and performance metrics are sent to the configured fmbids-openneuro instance.",
 }
 
 export async function loginAction(options: CommandOptions) {
@@ -39,7 +39,7 @@ export async function loginAction(options: CommandOptions) {
   }
   if (!token) {
     token = await Secret.prompt(
-      `Enter your API key for OpenNeuro (get an API key from ${url}/keygen). Dataset reviewers: paste the URL you received here.`,
+      `Enter your API key for fmbids-openneuro (get an API key from ${url}/keygen). Dataset reviewers: paste the URL you received here.`,
     )
     // If a reviewer URL is provided, extract the token portion
     if (token.includes("crn/reviewer") || token.includes("api/reviewer")) {
@@ -60,7 +60,7 @@ export async function loginAction(options: CommandOptions) {
 export const login = new Command()
   .name("login")
   .description(
-    "Setup credentials for OpenNeuro. Set -u, -t, and -e flags to skip interactive prompts.",
+    "Setup credentials for fmbids-openneuro. Set -u, -t, and -e flags to skip interactive prompts.",
   )
   .option("-u, --url <url>", messages.url)
   .option("-t, --token <token>", messages.token)

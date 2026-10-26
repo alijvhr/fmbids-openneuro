@@ -1,0 +1,38 @@
+{
+  "name": "@fmbids-openneuro/indexer",
+  "version": "5.10.2",
+  "description": "fmbids-openneuro elastic search indexing tool",
+  "main": "./dist/index.js",
+  "types": "./src/index.d.ts",
+  "repository": "git@github.com:alijvhr/fmbids-openneuro.git",
+  "author": "Squishymedia",
+  "license": "MIT",
+  "bin": "./src/index.ts",
+  "dependencies": {
+    "@apollo/client": "3.13.8",
+    "@elastic/elasticsearch": "8.13.1",
+    "@fmbids-openneuro/search": "^5.10.2",
+    "graphql": "16.8.1",
+    "ts-node": "10.9.2",
+    "tslib": "^2.8.1",
+    "typescript": "5.6.3"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "start": "node --enable-source-maps ./dist/index.js"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "devDependencies": {
+    "@types/jsonwebtoken": "^8",
+    "@types/node": "20.12.7",
+    "@types/tsc-watch": "^4",
+    "core-js": "^3.10.1",
+    "vitest": "4.1.11"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "b42d4f161451572737d0752da22508edf687c7a6"
+}

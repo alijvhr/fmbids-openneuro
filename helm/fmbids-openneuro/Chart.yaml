@@ -1,0 +1,12 @@
+apiVersion: v1
+name: fmbids-openneuro
+version: 1.8.0
+description: fmbids-openneuro production deployment chart
+home: https://openneuro.org
+sources:
+  - https://github.com/openNeuroOrg/openneuro
+appVersion: 5.10.1
+dependencies:
+  - name: redis
+    version: 22.0.7
+    repository: https://charts.bitnami.com/bitnami

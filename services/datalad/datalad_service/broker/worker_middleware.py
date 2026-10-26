@@ -70,7 +70,7 @@ def generate_worker_token():
 class WorkerMiddleware(TaskiqMiddleware):
     """
     This middleware adds a custom worker label to outgoing tasks scheduled by workers
-    and reports task status back to the OpenNeuro API.
+    and reports task status back to the fmbids-openneuro API.
     """
 
     def __init__(self, worker_id=None):

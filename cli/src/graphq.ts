@@ -1,5 +1,5 @@
 /**
- * Minimalist OpenNeuro client with no dependencies
+ * Minimalist fmbids-openneuro client with no dependencies
  */
 
 import { getConfig } from "./config.ts"

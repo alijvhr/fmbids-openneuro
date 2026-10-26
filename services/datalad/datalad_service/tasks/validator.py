@@ -47,7 +47,7 @@ async def validate_dataset_deno_call(dataset_path, ref, logger=logger):
 
     Runs the deno bids-validator process.
     """
-    # Sync to packages/openneuro-app/src/scripts/workers/schema.worker.ts
+    # Sync to packages/fmbids-openneuro-app/src/scripts/workers/schema.worker.ts
     config_path = Path(__file__).parent / 'assets' / 'validator-config.json'
     # Use an extended schema with datacite.yml allowed for now
     schema_path = Path(__file__).parent / 'assets' / 'schema-1.2.7-datacite.json'
@@ -96,7 +96,7 @@ def sanitize_subject_metadata(subject_metadata):
 
 def summary_mutation(dataset_id, ref, validator_output, validator_metadata):
     """
-    Return the OpenNeuro mutation to update a dataset summary.
+    Return the fmbids-openneuro mutation to update a dataset summary.
     """
     summary = validator_output['summary']
     summary['datasetId'] = dataset_id
@@ -116,7 +116,7 @@ def summary_mutation(dataset_id, ref, validator_output, validator_metadata):
 
 def issues_mutation(dataset_id, ref, issues, validator_metadata):
     """
-    Return the OpenNeuro mutation to update any validation issues.
+    Return the fmbids-openneuro mutation to update any validation issues.
     """
     # Workaround for bad "affects" values - drop them
     for issue in issues['issues']:

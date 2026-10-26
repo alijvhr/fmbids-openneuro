@@ -3271,9 +3271,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@openneuro/app@workspace:packages/openneuro-app":
+"@fmbids-openneuro/app@workspace:packages/fmbids-openneuro-app":
   version: 0.0.0-use.local
-  resolution: "@openneuro/app@workspace:packages/openneuro-app"
+  resolution: "@fmbids-openneuro/app@workspace:packages/fmbids-openneuro-app"
   dependencies:
     "@apollo/client": "npm:3.13.8"
     "@artsy/fresnel": "npm:^1.3.1"
@@ -3357,13 +3357,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@openneuro/indexer@workspace:packages/openneuro-indexer":
+"@fmbids-openneuro/indexer@workspace:packages/fmbids-openneuro-indexer":
   version: 0.0.0-use.local
-  resolution: "@openneuro/indexer@workspace:packages/openneuro-indexer"
+  resolution: "@fmbids-openneuro/indexer@workspace:packages/fmbids-openneuro-indexer"
   dependencies:
     "@apollo/client": "npm:3.13.8"
     "@elastic/elasticsearch": "npm:8.13.1"
-    "@openneuro/search": "npm:^5.10.2"
+    "@fmbids-openneuro/search": "npm:^5.10.2"
     "@types/jsonwebtoken": "npm:^8"
     "@types/node": "npm:20.12.7"
     "@types/tsc-watch": "npm:^4"
@@ -3378,9 +3378,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@openneuro/search@npm:^5.10.2, @openneuro/search@workspace:packages/openneuro-search":
+"@fmbids-openneuro/search@npm:^5.10.2, @fmbids-openneuro/search@workspace:packages/fmbids-openneuro-search":
   version: 0.0.0-use.local
-  resolution: "@openneuro/search@workspace:packages/openneuro-search"
+  resolution: "@fmbids-openneuro/search@workspace:packages/fmbids-openneuro-search"
   dependencies:
     "@apollo/client": "npm:3.13.8"
     "@elastic/elasticsearch": "npm:8.13.1"
@@ -3393,9 +3393,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@openneuro/server@workspace:packages/openneuro-server":
+"@fmbids-openneuro/server@workspace:packages/fmbids-openneuro-server":
   version: 0.0.0-use.local
-  resolution: "@openneuro/server@workspace:packages/openneuro-server"
+  resolution: "@fmbids-openneuro/server@workspace:packages/fmbids-openneuro-server"
   dependencies:
     "@apollo/client": "npm:3.13.8"
     "@apollo/server": "npm:~5.5.0"
@@ -3404,7 +3404,7 @@ __metadata:
     "@elastic/elasticsearch": "npm:8.13.1"
     "@graphql-tools/schema": "npm:^10.0.0"
     "@keyv/redis": "npm:^4.5.0"
-    "@openneuro/search": "npm:^5.10.2"
+    "@fmbids-openneuro/search": "npm:^5.10.2"
     "@pothos/core": "npm:^4.12.0"
     "@pothos/plugin-directives": "npm:^4.3.0"
     "@pothos/plugin-simple-objects": "npm:^4.1.3"

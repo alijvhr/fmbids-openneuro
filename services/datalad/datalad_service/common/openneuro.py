@@ -32,7 +32,7 @@ def cache_clear_mutation(dataset_id):
 
 
 def clear_dataset_cache(dataset_id):
-    """Post a cacheClear event to OpenNeuro to allow the API to query new data after changes"""
+    """Post a cacheClear event to fmbids-openneuro to allow the API to query new data after changes"""
     r = requests.post(
         url=GRAPHQL_ENDPOINT,
         json=cache_clear_mutation(dataset_id),
@@ -76,7 +76,7 @@ def update_file_check(dataset_path, commit, references, bad_files, remote=None):
 
 
 def is_public_dataset(dataset_id):
-    """Ask the OpenNeuro API if this dataset is public."""
+    """Ask the fmbids-openneuro API if this dataset is public."""
     try:
         logger = logging.getLogger(__name__)
         response = requests.post(

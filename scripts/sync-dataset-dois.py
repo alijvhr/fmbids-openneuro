@@ -103,7 +103,7 @@ def main():
     parser.add_argument(
         '--url',
         default='https://openneuro.org/crn/graphql',
-        help='OpenNeuro GraphQL API URL',
+        help='fmbids-openneuro GraphQL API URL',
     )
     parser.add_argument(
         '--token', help='Admin access token (required for mutation)', required=True

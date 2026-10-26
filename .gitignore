@@ -8,7 +8,7 @@ lerna-debug.log
 coverage
 datalad-key
 datalad-key.pub
-packages/openneuro-server/yarn.lock
+packages/fmbids-openneuro-server/yarn.lock
 .docz
 dist
 .build-cache

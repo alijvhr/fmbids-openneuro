@@ -39,7 +39,7 @@ LICENSE annex.largefiles=nothing`),
       fs,
       dir: testRepo,
       author: {
-        name: "OpenNeuro",
+        name: "fmbids-openneuro",
         email: "git@openneuro.org",
       },
       message: "Test suite repo, please ignore",

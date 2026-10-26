@@ -15,30 +15,30 @@ const RAW_RUNTIME_STATE =
       "reference": "workspace:."\
     },\
     {\
-      "name": "@openneuro/app",\
-      "reference": "workspace:packages/openneuro-app"\
+      "name": "@fmbids-openneuro/app",\
+      "reference": "workspace:packages/fmbids-openneuro-app"\
     },\
     {\
-      "name": "@openneuro/indexer",\
-      "reference": "workspace:packages/openneuro-indexer"\
+      "name": "@fmbids-openneuro/indexer",\
+      "reference": "workspace:packages/fmbids-openneuro-indexer"\
     },\
     {\
-      "name": "@openneuro/search",\
-      "reference": "workspace:packages/openneuro-search"\
+      "name": "@fmbids-openneuro/search",\
+      "reference": "workspace:packages/fmbids-openneuro-search"\
     },\
     {\
-      "name": "@openneuro/server",\
-      "reference": "workspace:packages/openneuro-server"\
+      "name": "@fmbids-openneuro/server",\
+      "reference": "workspace:packages/fmbids-openneuro-server"\
     }\
   ],\
   "enableTopLevelFallback": true,\
   "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
   "pnpZipBackend": "libzip",\
   "fallbackExclusionList": [\
-    ["@openneuro/app", ["workspace:packages/openneuro-app"]],\
-    ["@openneuro/indexer", ["workspace:packages/openneuro-indexer"]],\
-    ["@openneuro/search", ["workspace:packages/openneuro-search"]],\
-    ["@openneuro/server", ["workspace:packages/openneuro-server"]],\
+    ["@fmbids-openneuro/app", ["workspace:packages/fmbids-openneuro-app"]],\
+    ["@fmbids-openneuro/indexer", ["workspace:packages/fmbids-openneuro-indexer"]],\
+    ["@fmbids-openneuro/search", ["workspace:packages/fmbids-openneuro-search"]],\
+    ["@fmbids-openneuro/server", ["workspace:packages/fmbids-openneuro-server"]],\
     ["root-workspace-0b6124", ["workspace:."]]\
   ],\
   "fallbackPool": [\
@@ -4231,9 +4231,9 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["@openneuro/app", [\
-      ["workspace:packages/openneuro-app", {\
-        "packageLocation": "./packages/openneuro-app/",\
+    ["@fmbids-openneuro/app", [\
+      ["workspace:packages/fmbids-openneuro-app", {\
+        "packageLocation": "./packages/fmbids-openneuro-app/",\
         "packageDependencies": [\
           ["@apollo/client", "virtual:4112afb9dad10978c159910bf10db9840b981b1333117623c8a4a8cf77481344a0a24735a5506e2920c18e3cfa2cc179489824b6a56c988bb070f4f60da40974#npm:3.13.8"],\
           ["@artsy/fresnel", "virtual:4112afb9dad10978c159910bf10db9840b981b1333117623c8a4a8cf77481344a0a24735a5506e2920c18e3cfa2cc179489824b6a56c988bb070f4f60da40974#npm:1.9.0"],\
@@ -4245,7 +4245,7 @@ const RAW_RUNTIME_STATE =
           ["@emotion/react", "virtual:dfc8861fb483e7f9493811b738b55fee97a3c3e2cb836e82763f82cb601d9955d5ee09c520fd30825cc5220c166a2003feb13430de5559fb2a330912125de5c2#npm:11.11.1"],\
           ["@emotion/styled", "virtual:dfc8861fb483e7f9493811b738b55fee97a3c3e2cb836e82763f82cb601d9955d5ee09c520fd30825cc5220c166a2003feb13430de5559fb2a330912125de5c2#npm:11.11.0"],\
           ["@niivue/niivue", "npm:0.57.0"],\
-          ["@openneuro/app", "workspace:packages/openneuro-app"],\
+          ["@fmbids-openneuro/app", "workspace:packages/fmbids-openneuro-app"],\
           ["@openneuro/components", "npm:4.33.4"],\
           ["@sentry/react", "virtual:4112afb9dad10978c159910bf10db9840b981b1333117623c8a4a8cf77481344a0a24735a5506e2920c18e3cfa2cc179489824b6a56c988bb070f4f60da40974#npm:10.37.0"],\
           ["@tanstack/react-table", "virtual:4112afb9dad10978c159910bf10db9840b981b1333117623c8a4a8cf77481344a0a24735a5506e2920c18e3cfa2cc179489824b6a56c988bb070f4f60da40974#npm:8.9.3"],\
@@ -4323,14 +4323,14 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["@openneuro/indexer", [\
-      ["workspace:packages/openneuro-indexer", {\
-        "packageLocation": "./packages/openneuro-indexer/",\
+    ["@fmbids-openneuro/indexer", [\
+      ["workspace:packages/fmbids-openneuro-indexer", {\
+        "packageLocation": "./packages/fmbids-openneuro-indexer/",\
         "packageDependencies": [\
           ["@apollo/client", "virtual:e74940e35978632a0c14fa5497dc52825a9c66f5b1078eb2e64acf3c410407bb81bc4632771c0031555903c2ed0410b5bd9f7005884e1b336a14c40f1d7762b1#npm:3.13.8"],\
           ["@elastic/elasticsearch", "npm:8.13.1"],\
-          ["@openneuro/indexer", "workspace:packages/openneuro-indexer"],\
-          ["@openneuro/search", "workspace:packages/openneuro-search"],\
+          ["@fmbids-openneuro/indexer", "workspace:packages/fmbids-openneuro-indexer"],\
+          ["@fmbids-openneuro/search", "workspace:packages/fmbids-openneuro-search"],\
           ["@types/jsonwebtoken", "npm:8.5.5"],\
           ["@types/node", "npm:20.12.7"],\
           ["@types/tsc-watch", "npm:4.2.0"],\
@@ -4344,13 +4344,13 @@ const RAW_RUNTIME_STATE =
         "linkType": "SOFT"\
       }]\
     ]],\
-    ["@openneuro/search", [\
-      ["workspace:packages/openneuro-search", {\
-        "packageLocation": "./packages/openneuro-search/",\
+    ["@fmbids-openneuro/search", [\
+      ["workspace:packages/fmbids-openneuro-search", {\
+        "packageLocation": "./packages/fmbids-openneuro-search/",\
         "packageDependencies": [\
           ["@apollo/client", "virtual:e74940e35978632a0c14fa5497dc52825a9c66f5b1078eb2e64acf3c410407bb81bc4632771c0031555903c2ed0410b5bd9f7005884e1b336a14c40f1d7762b1#npm:3.13.8"],\
           ["@elastic/elasticsearch", "npm:8.13.1"],\
-          ["@openneuro/search", "workspace:packages/openneuro-search"],\
+          ["@fmbids-openneuro/search", "workspace:packages/fmbids-openneuro-search"],\
           ["@types/jsonwebtoken", "npm:8.5.5"],\
           ["@types/node", "npm:20.12.7"],\
           ["core-js", "npm:3.18.0"],\
@@ -4361,9 +4361,9 @@ const RAW_RUNTIME_STATE =
         "linkType": "SOFT"\
       }]\
     ]],\
-    ["@openneuro/server", [\
-      ["workspace:packages/openneuro-server", {\
-        "packageLocation": "./packages/openneuro-server/",\
+    ["@fmbids-openneuro/server", [\
+      ["workspace:packages/fmbids-openneuro-server", {\
+        "packageLocation": "./packages/fmbids-openneuro-server/",\
         "packageDependencies": [\
           ["@apollo/client", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:3.13.8"],\
           ["@apollo/server", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:5.5.0"],\
@@ -4372,8 +4372,8 @@ const RAW_RUNTIME_STATE =
           ["@elastic/elasticsearch", "npm:8.13.1"],\
           ["@graphql-tools/schema", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:10.0.0"],\
           ["@keyv/redis", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:4.5.0"],\
-          ["@openneuro/search", "workspace:packages/openneuro-search"],\
-          ["@openneuro/server", "workspace:packages/openneuro-server"],\
+          ["@fmbids-openneuro/search", "workspace:packages/fmbids-openneuro-search"],\
+          ["@fmbids-openneuro/server", "workspace:packages/fmbids-openneuro-server"],\
           ["@pothos/core", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:4.12.0"],\
           ["@pothos/plugin-directives", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:4.3.0"],\
           ["@pothos/plugin-simple-objects", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:4.1.3"],\

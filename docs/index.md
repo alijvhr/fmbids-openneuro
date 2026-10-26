@@ -1,14 +1,14 @@
-# OpenNeuro Documentation
+# fmbids-openneuro Documentation
 
-Welcome to the OpenNeuro documentation site. OpenNeuro is a free and open platform
+Welcome to the fmbids-openneuro documentation site. fmbids-openneuro is a free and open platform
 for sharing neuroimaging data.
 
 ## Getting started
 
-If you are a looking for datasets, [OpenNeuro Search][OpenNeuro Search] allows you to search public
+If you are a looking for datasets, [fmbids-openneuro Search][fmbids-openneuro Search] allows you to search public
 datasets.
 
-If you are considering uploading datasets to OpenNeuro, or recommending OpenNeuro as
+If you are considering uploading datasets to fmbids-openneuro, or recommending fmbids-openneuro as
 an upload host, please review our [](policy/data_retention.md) and
 our [](policy/data_management_plans.md). When you
 are ready to upload, check out our [](user_guide.md)!
@@ -24,7 +24,7 @@ For general problems that would benefit from community expertise and advice,
 we highly recommend looking to [NeuroStars](https://neurostars.org/) for assistance.
 It is a public forum hosted by the
 {abbr}`INCF (International Neuroinformatics Coordinating Facility)`
-and there you'll be able to find experienced users of OpenNeuro and
+and there you'll be able to find experienced users of fmbids-openneuro and
 {abbr}`BIDS (Brain Imaging Data Structure)`,
 as well as experts in nearly any topic in neuroscience.
 
@@ -39,8 +39,8 @@ private, we may refer you to a public forum where a broader audience has the opp
 and the results can be searched by future users with similar problems.
 ```
 
-Finally, if you'd like to suggest a new feature for OpenNeuro, you can do so at
-[OpenNeuro's User Suggestions](https://openneuro.featureupvote.com/).
+Finally, if you'd like to suggest a new feature for fmbids-openneuro, you can do so at
+[fmbids-openneuro's User Suggestions](https://openneuro.featureupvote.com/).
 
 ```{toctree}
 :hidden:
@@ -51,7 +51,7 @@ orcid
 ```
 
 ```{toctree}
-:caption: OpenNeuro polices
+:caption: fmbids-openneuro polices
 :hidden:
 
 policy/data_retention
@@ -60,7 +60,7 @@ policy/data_management_plans
 
 ## Advanced usage
 
-In addition to the web interface, OpenNeuro provides three ways of interacting with the service:
+In addition to the web interface, fmbids-openneuro provides three ways of interacting with the service:
 
 ```{toctree}
 :caption: Advanced usage
@@ -82,7 +82,7 @@ which enables working with private datasets with [DataLad](https://handbook.data
 
 ## Developer resources
 
-Developers interested in hosting an OpenNeuro instance or who are curious about the
+Developers interested in hosting an fmbids-openneuro instance or who are curious about the
 structure of our package and hosting setup may be interested in the following sections.
 
 ```{toctree}
@@ -91,7 +91,7 @@ structure of our package and hosting setup may be interested in the following se
 
 architecture
 maintenance
-Source repository (GitHub) <https://github.com/OpenNeuroOrg/openneuro>
+Source repository (GitHub) <https://github.com/alijvhr/fmbids-openneuro>
 ```
 
-[OpenNeuro Search]: https://openneuro.org/search
+[fmbids-openneuro Search]: https://openneuro.org/search

@@ -47,7 +47,7 @@ class EditAnnexedFileException(Exception):
 def init_annex(dataset_path):
     """Setup git-annex within an existing git repo"""
     subprocess.run(
-        ['git-annex', 'init', 'OpenNeuro', '--numcopies=2'],
+        ['git-annex', 'init', 'fmbids-openneuro', '--numcopies=2'],
         check=True,
         cwd=dataset_path,
     )
@@ -385,7 +385,7 @@ def annex_initremote(dataset_path, remote_name, remote_options):
     new_tree_oid = builder.write()
     author = pygit2.Signature(SERVICE_USER, SERVICE_EMAIL)
     committer = pygit2.Signature(SERVICE_USER, SERVICE_EMAIL)
-    commit_message = f'[OpenNeuro] Initialize git-annex remote {remote_name}'
+    commit_message = f'[fmbids-openneuro] Initialize git-annex remote {remote_name}'
     repo.create_commit(
         branch.name,  # The ref to update (our branch)
         author,  # The commit author

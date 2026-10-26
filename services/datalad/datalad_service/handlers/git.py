@@ -144,7 +144,7 @@ class GitReceiveResource:
             resp.stream = process.stdout
             resp.status = falcon.HTTP_OK
 
-            # After this request finishes successfully, log it to the OpenNeuro API
+            # After this request finishes successfully, log it to the fmbids-openneuro API
             async def schedule_git_event():
                 try:
                     await on_head(dataset_path)

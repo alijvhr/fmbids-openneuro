@@ -6,7 +6,7 @@ orphan: true
 
 # Infrastructure Monitoring
 
-OpenNeuro is running Prometheus and Grafana for general monitoring and alerting. The Grafana dashboard is deployed at https://monitoring.openneuro.org and an account must be requested to access it.
+fmbids-openneuro is running Prometheus and Grafana for general monitoring and alerting. The Grafana dashboard is deployed at https://monitoring.openneuro.org and an account must be requested to access it.
 
 ## Install
 

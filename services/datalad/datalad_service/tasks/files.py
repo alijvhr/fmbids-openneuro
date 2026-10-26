@@ -64,7 +64,7 @@ async def remove_files(store, dataset, paths, name=None, email=None, cookies=Non
     # the number of paths being deleted.
     for target in targets:
         remove_from_worktree(dataset_root, target)
-    await git_commit_index(repo, author, message='[OpenNeuro] Files removed')
+    await git_commit_index(repo, author, message='[fmbids-openneuro] Files removed')
 
 
 def parse_s3_annex_url(url, bucket_name=AWS_S3_PUBLIC_BUCKET):

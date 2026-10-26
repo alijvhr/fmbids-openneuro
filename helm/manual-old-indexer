@@ -19,7 +19,7 @@ spec:
             name: openneuro-prod-secret
         image: openneuro/indexer:v3.31.1
         imagePullPolicy: IfNotPresent
-        name: openneuro-indexer
+        name: fmbids-openneuro-indexer
         resources:
           limits:
             cpu: 500m

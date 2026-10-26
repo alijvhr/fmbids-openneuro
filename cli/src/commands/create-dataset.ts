@@ -48,7 +48,7 @@ export async function createDatasetAffirmed(
       {
         name: "syntheticDataset",
         message:
-          "Does this dataset contain synthetic data? If so, please contact the OpenNeuro team with the support menu to discuss sharing prior to uploading.",
+          "Does this dataset contain synthetic data? If so, please contact the fmbids-openneuro team with the support menu to discuss sharing prior to uploading.",
         type: Confirm,
       },
     ])

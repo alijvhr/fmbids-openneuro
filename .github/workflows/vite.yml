@@ -21,7 +21,7 @@ jobs:
           cache: 'yarn'
       - run: yarn install
       - name: Run production vite build
-        working-directory: ./packages/openneuro-app
+        working-directory: ./packages/fmbids-openneuro-app
         run: yarn build
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

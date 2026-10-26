@@ -1,4 +1,4 @@
-# OpenNeuro is NOT a Python package.
+# fmbids-openneuro is NOT a Python package.
 # This pyproject.toml is here because this is how uv specifies dependencies,
 # and we use sphinx for documentation generation.
 [project]

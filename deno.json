@@ -7,7 +7,7 @@
       ".yarn/",
       ".pnp.cjs",
       ".pnp.loader.mjs",
-      "packages/openneuro-app/src/scripts/utils/schema-validator.js",
+      "packages/fmbids-openneuro-app/src/scripts/utils/schema-validator.js",
       "dist",
       "packages/**/dist",
       "services/datalad/tests/.pytest_cache",

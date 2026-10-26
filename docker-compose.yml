@@ -1,5 +1,6 @@
 # docker compose versions
 version: "2.3"
+name: fmbids-openneuro
 
 services:
   # This dummy service provides shared configuration for all Node deps
@@ -18,16 +19,16 @@ services:
       - ./:/srv:rw,z
       - build-dist:/srv/dist
       - build-cache:/srv/.build-cache
-      - app-dist:/srv/packages/openneuro-app/dist
-      - indexer-dist:/srv/packages/openneuro-indexer/dist
-      - search-dist:/srv/packages/openneuro-search/dist
-      - server-dist:/srv/packages/openneuro-server/dist
+      - app-dist:/srv/packages/fmbids-openneuro-app/dist
+      - indexer-dist:/srv/packages/fmbids-openneuro-indexer/dist
+      - search-dist:/srv/packages/fmbids-openneuro-search/dist
+      - server-dist:/srv/packages/fmbids-openneuro-server/dist
 
   # web app bundle build
   app:
     extends:
       service: node
-    command: bash -c 'npm install --global corepack@0.36.0 && corepack enable &&yarn workspace @openneuro/app start'
+    command: bash -c 'npm install --global corepack@0.36.0 && corepack enable &&yarn workspace @fmbids-openneuro/app start'
     healthcheck:
       test: curl -f http://localhost/index.html || exit 1
       interval: 5s
@@ -45,7 +46,7 @@ services:
   server:
     extends:
       service: node
-    command: bash -c 'npm install --global corepack@0.36.0 && corepack enable &&yarn workspace @openneuro/server start'
+    command: bash -c 'npm install --global corepack@0.36.0 && corepack enable &&yarn workspace @fmbids-openneuro/server start'
     healthcheck:
       test: curl -f http://localhost:8111/crn || exit 1
       interval: 5s
@@ -66,7 +67,7 @@ services:
   indexer:
     extends:
       service: node
-    command: bash -c 'npm install --global corepack@0.36.0 && corepack enable &&sleep 10 && yarn workspace @openneuro/indexer start'
+    command: bash -c 'npm install --global corepack@0.36.0 && corepack enable &&sleep 10 && yarn workspace @fmbids-openneuro/indexer start'
     depends_on:
       server:
         condition: service_healthy

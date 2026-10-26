@@ -7,7 +7,7 @@ import { getLatestSnapshotVersion } from "../graphq.ts"
 
 export const download = new Command()
   .name("download")
-  .description("Download a dataset from OpenNeuro")
+  .description("Download a dataset from fmbids-openneuro")
   .arguments("<accession_number> <download_directory>")
   .option(
     "-d, --draft",

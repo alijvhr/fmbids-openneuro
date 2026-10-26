@@ -1,0 +1,33 @@
+{
+  "name": "@fmbids-openneuro/search",
+  "version": "5.10.2",
+  "description": "fmbids-openneuro search client functions.",
+  "main": "dist/index.js",
+  "browser": "src/index.ts",
+  "exports": {
+    "import": "./src/index.js",
+    "require": "./dist/index.js"
+  },
+  "repository": "git@github.com:alijvhr/fmbids-openneuro.git",
+  "author": "Stanford Center for Reproducible Neuroscience",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -b"
+  },
+  "dependencies": {
+    "@apollo/client": "3.13.8",
+    "@elastic/elasticsearch": "8.13.1",
+    "graphql": "16.8.1",
+    "jsonwebtoken": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^8",
+    "@types/node": "20.12.7",
+    "core-js": "^3.10.1",
+    "vitest": "4.1.11"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "b42d4f161451572737d0752da22508edf687c7a6"
+}

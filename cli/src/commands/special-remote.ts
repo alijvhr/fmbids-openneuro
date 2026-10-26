@@ -113,7 +113,7 @@ export async function annexSpecialRemote() {
 export const specialRemote = new Command()
   .name("special-remote")
   .description(
-    "git-annex special remote for uploading or downloading from OpenNeuro",
+    "git-annex special remote for uploading or downloading from fmbids-openneuro",
   )
   .action(async () => {
     await annexSpecialRemote()

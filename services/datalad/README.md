@@ -4,7 +4,7 @@ name: DataLad Service
 
 # DataLad Service
 
-A backend component of OpenNeuro, this service provides HTTP interfaces for creating, updating, and exporting DataLad datasets, used by [OpenNeuro](https://openneuro.org). This allows the OpenNeuro API to queue backend tasks here and asynchronously respond to these signals to update clients.
+A backend component of fmbids-openneuro, this service provides HTTP interfaces for creating, updating, and exporting DataLad datasets, used by [fmbids-openneuro](https://openneuro.org). This allows the fmbids-openneuro API to queue backend tasks here and asynchronously respond to these signals to update clients.
 
 # Setup
 

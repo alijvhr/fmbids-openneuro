@@ -31,9 +31,9 @@
     "cli"
   ],
   "references": [
-    { "path": "./packages/openneuro-app" },
-    { "path": "./packages/openneuro-indexer" },
-    { "path": "./packages/openneuro-search" },
-    { "path": "./packages/openneuro-server" }
+    { "path": "./packages/fmbids-openneuro-app" },
+    { "path": "./packages/fmbids-openneuro-indexer" },
+    { "path": "./packages/fmbids-openneuro-search" },
+    { "path": "./packages/fmbids-openneuro-server" }
   ]
 }

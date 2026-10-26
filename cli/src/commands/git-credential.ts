@@ -49,7 +49,7 @@ export async function getRepoAccess(datasetId?: string, instance?: string) {
 }
 
 /**
- * Provide a git-credential helper for OpenNeuro
+ * Provide a git-credential helper for fmbids-openneuro
  */
 export async function gitCredentialAction(
   instance: string,
@@ -89,7 +89,7 @@ export const gitCredential = new Command()
   .description(
     "A git credentials helper for easier datalad or git-annex access to datasets.",
   )
-  .globalOption("-u, --url <url>", "OpenNeuro instance URL to use.", {
+  .globalOption("-u, --url <url>", "fmbids-openneuro instance URL to use.", {
     default: "https://openneuro.org",
   })
   // Credentials here are short lived so store is not useful

@@ -29,7 +29,7 @@ def key_to_path(key):
 class GitAnnexResource:
     """{worker}/{dataset}/annex/{key} serves git-annex object requests
 
-    This allows OpenNeuro to act as a special remote, adding or removing objects from .git/annex/objects/
+    This allows fmbids-openneuro to act as a special remote, adding or removing objects from .git/annex/objects/
     """
 
     def __init__(self, store):

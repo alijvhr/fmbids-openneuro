@@ -1,10 +1,10 @@
 # User Guide
 
-Welcome to OpenNeuro! This guide is dedicated to new users to the site who would like to get started on using the [OpenNeuro web platform](https://openneuro.org/) to freely store and share [Brain Imaging Data Structure (BIDS) datasets](https://bids.neuroimaging.io/).
+Welcome to fmbids-openneuro! This guide is dedicated to new users to the site who would like to get started on using the [fmbids-openneuro web platform](https://openneuro.org/) to freely store and share [Brain Imaging Data Structure (BIDS) datasets](https://bids.neuroimaging.io/).
 
-OpenNeuro is a data archive that follows the [FAIR principles for data management](https://www.go-fair.org/fair-principles/),
+fmbids-openneuro is a data archive that follows the [FAIR principles for data management](https://www.go-fair.org/fair-principles/),
 and which we hope can be a useful resource for your research projects.
-In this guide, we describe browsing, downloading, uploading and managing OpenNeuro datasets.
+In this guide, we describe browsing, downloading, uploading and managing fmbids-openneuro datasets.
 
 For additional guidance and motivation on reproducible neuroimaging research,
 we recommend the [Open and reproducible neuroimaging](https://oreoni.github.io/) guide
@@ -12,7 +12,7 @@ and the [ReproNim 5 Steps](https://www.repronim.org/5steps).
 
 ## Signing Up
 
-OpenNeuro does not require you to have an account to browse and download public datasets, but having an account does allow you to save those that interest you or to subscribe to them for email updates. Naturally, you will also need an account if you plan to store or manage your own datasets.
+fmbids-openneuro does not require you to have an account to browse and download public datasets, but having an account does allow you to save those that interest you or to subscribe to them for email updates. Naturally, you will also need an account if you plan to store or manage your own datasets.
 
 Signing up or signing in is easy with a Google or ORCID account. Simply hit the SIGN IN button in the top right of the page and choose your preferred account.
 
@@ -45,7 +45,7 @@ Located at the top of the page, the toolbar contains the following options (icon
 
 - Follow/Subscribe: Get email updates when a new version is posted.
 - Like/Save: Add dataset to your Dashboard under Saved Datasets.
-- View metadata: View data not necessarily contained within the dataset, including it's DOI, OpenNeuro ID and URL, study type and design, number of trials, etc. This data helps make datasets searchable, and a compilation of the metadata of all datasets on OpenNeuro can be found at [metadata.openneuro.org](http://metadata.openneuro.org/).
+- View metadata: View data not necessarily contained within the dataset, including it's DOI, fmbids-openneuro ID and URL, study type and design, number of trials, etc. This data helps make datasets searchable, and a compilation of the metadata of all datasets on fmbids-openneuro can be found at [metadata.openneuro.org](http://metadata.openneuro.org/).
 
 Datasets you own will have more items in their toolbar.
 
@@ -72,7 +72,7 @@ This is the main section of the dataset landing page, containing almost all of i
 
 ## Uploading Your Dataset
 
-Once you've signed into OpenNeuro, you'll be able to upload your dataset by hitting the button at the top left of the page. This will open a window guiding you through the four step process of adding the dataset to OpenNeuro.
+Once you've signed into fmbids-openneuro, you'll be able to upload your dataset by hitting the button at the top left of the page. This will open a window guiding you through the four step process of adding the dataset to fmbids-openneuro.
 
 There are a few things to keep in mind before uploading a dataset:
 
@@ -113,18 +113,18 @@ The draft page information is nearly identical to the snapshot pages, the differ
 The dataset toolbar will have a few new items, including:
 
 - Publish: Make your dataset public. This will make it available under the CC0 license.
-- Delete: Permanently remove your dataset from OpenNeuro. If you are deleting the dataset to replace it, a redirect url can be submitted with the delete form.
+- Delete: Permanently remove your dataset from fmbids-openneuro. If you are deleting the dataset to replace it, a redirect url can be submitted with the delete form.
 - Manage Permissions: Add collaborators to the dataset and manage their read/write permissions.
 - Create Snapshot: Create a new version of this dataset with changes made to Draft.
 - View and Edit Metadata: If you didn't add the metadata on upload, you can fill it in here.
 
-Advanced users may wish to manage their datasets by other means. OpenNeuro datasets and features are available through its [GraphQL API](/api), the [openneuro-cli](packages/openneuro-cli), DataLad, and [direct git access](/git).
+Advanced users may wish to manage their datasets by other means. fmbids-openneuro datasets and features are available through its [GraphQL API](/api), the [openneuro-cli](packages/openneuro-cli), DataLad, and [direct git access](/git).
 
 ## Support Channels
 
 If you're running into complications, there are multiple means by which you can find a resolution.
 
-To start, OpenNeuro has a [FAQ page](https://openneuro.org/faq) that might contain what you're looking for.
+To start, fmbids-openneuro has a [FAQ page](https://openneuro.org/faq) that might contain what you're looking for.
 
 If you're running into problems of a less general nature, we highly recommend looking to [NeuroStars](https://neurostars.org/) for assistance. It is a public forum hosted by the International Neuroinformatics Coordinating Facility (INCF) and there you'll be able to find experienced users of this and other related platforms.
 

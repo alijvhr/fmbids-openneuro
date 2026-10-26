@@ -1,5 +1,5 @@
 /**
- * Entrypoint for OpenNeuro CLI
+ * Entrypoint for fmbids-openneuro CLI
  */
 import * as Sentry from "@sentry/deno"
 import denoJson from "./deno.json" with { type: "json" }
@@ -12,7 +12,7 @@ import { commandLine } from "./src/options.ts"
 import { annexSpecialRemote } from "./src/commands/special-remote.ts"
 
 /**
- * Entrypoint for running OpenNeuro command line tools
+ * Entrypoint for running fmbids-openneuro command line tools
  */
 export async function main() {
   if (Deno.execPath().endsWith("git-annex-remote-openneuro")) {

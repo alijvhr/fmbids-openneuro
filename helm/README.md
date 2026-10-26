@@ -2,9 +2,9 @@
 name: Kubernetes Deployment
 ---
 
-# OpenNeuro Kubernetes Deployment
+# fmbids-openneuro Kubernetes Deployment
 
-This chart is used to deploy a copy of OpenNeuro and all required services excluding MongoDB, and ElasticSearch.
+This chart is used to deploy a copy of fmbids-openneuro and all required services excluding MongoDB, and ElasticSearch.
 
 On GCP, this chart is designed to support GKE with Autopilot for deployment. Only worker disks and cluster creation are configured outside of this chart.
 
@@ -12,9 +12,9 @@ Written for Helm 3.0.0 or later
 
 ## Major components
 
-- API deployment - GraphQL service (@openneuro/server npm package)
+- API deployment - GraphQL service (@fmbids-openneuro/server npm package)
 - DataLad service deployment - Falcon server for microservice operations on datasets
-- Web deployment - Nginx serving static resources including the React application (@openneuro/app npm package)
+- Web deployment - Nginx serving static resources including the React application (@fmbids-openneuro/app npm package)
 
 ## Pre-requisites
 
@@ -51,7 +51,7 @@ gcloud container clusters create-auto openneuro-dev --region=us-west1
 
 This will configure the cluster and setup credentials and command context for later kubectl and helm commands. This requires IAM permissions for Kubernetes Engine.
 
-OpenNeuro runs with autopilot which automatically allocates node resources as requested by the container requests: field.
+fmbids-openneuro runs with autopilot which automatically allocates node resources as requested by the container requests: field.
 
 ### Storage setup
 

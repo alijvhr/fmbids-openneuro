@@ -12,7 +12,7 @@ jobs:
         id: build-docker-image
         run: |
           docker build -t openneuro/node:latest .
-          docker build -t openneuro/server:latest packages/openneuro-server
+          docker build -t openneuro/server:latest packages/fmbids-openneuro-server
   build_app:
     name: App
     runs-on: ubuntu-latest
@@ -22,7 +22,7 @@ jobs:
         id: build-docker-image
         run: |
           docker build -t openneuro/node:latest .
-          docker build -t openneuro/app:latest packages/openneuro-app
+          docker build -t openneuro/app:latest packages/fmbids-openneuro-app
   build_indexer:
     name: Indexer
     runs-on: ubuntu-latest
@@ -32,7 +32,7 @@ jobs:
         id: build-docker-image
         run: |
           docker build -t openneuro/node:latest .
-          docker build -t openneuro/indexer:latest packages/openneuro-indexer
+          docker build -t openneuro/indexer:latest packages/fmbids-openneuro-indexer
   build_datalad_service:
     name: Datalad Service
     runs-on: ubuntu-latest

@@ -21,7 +21,7 @@ export type OpenNeuroOptions = {
 const openneuroCommand = new Command()
   .name("openneuro")
   .description(
-    "OpenNeuro command line tools for uploading, downloading, or syncing datasets. See https://docs.openneuro.org for detailed guides.",
+    "fmbids-openneuro command line tools for uploading, downloading, or syncing datasets. See https://docs.openneuro.org for detailed guides.",
   )
   .version(denoJson.version)
   .globalType("debugLevel", new EnumType(LogLevelNames))
@@ -29,8 +29,8 @@ const openneuroCommand = new Command()
   .globalAction(({ openneuroLog }) => {
     setupLogging(openneuroLog ? openneuroLog : "ERROR")
   })
-  .globalEnv("OPENNEURO_API_KEY=<key:string>", "Specify an OpenNeuro API key.")
-  .globalEnv("OPENNEURO_URL=<url:string>", "Specify an OpenNeuro URL to use.")
+  .globalEnv("OPENNEURO_API_KEY=<key:string>", "Specify an fmbids-openneuro API key.")
+  .globalEnv("OPENNEURO_URL=<url:string>", "Specify an fmbids-openneuro URL to use.")
   .action(function () {
     // Show help if no action is selected
     openneuroCommand.showHelp()

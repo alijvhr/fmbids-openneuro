@@ -2,7 +2,7 @@
 
 ## Unpublishing a dataset
 
-To unpublish a dataset the database flag datasets.public can be set to false. Example query: `db.datasets.updateOne({id: "accession-number"}, {$set: {public: false}}`. This will hide the dataset on OpenNeuro but not remove it from any configured git-annex remotes.
+To unpublish a dataset the database flag datasets.public can be set to false. Example query: `db.datasets.updateOne({id: "accession-number"}, {$set: {public: false}}`. This will hide the dataset on fmbids-openneuro but not remove it from any configured git-annex remotes.
 
 After unpublishing a dataset like this the search index must either have the hidden dataset removed or the index needs to be rebuilt.
 
@@ -29,6 +29,6 @@ openneuro-staging-datasets-3              us-west1-b  zone            256      p
 > gcloud compute disks resize openneuro-staging-datasets-0 --size=512
 ```
 
-Make sure the resize operation has completed (status "READY") and then update the worker configuration for the PV to match (see `helm/openneuro/values.yaml` key workerDiskSize) and upgrade to deploy the new helm configuration.
+Make sure the resize operation has completed (status "READY") and then update the worker configuration for the PV to match (see `helm/fmbids-openneuro/values.yaml` key workerDiskSize) and upgrade to deploy the new helm configuration.
 
 If the configuration is updated prior to the disk being resized, the worker will need to be restarted to pick up the change. Verify the resize is complete with a shell on the worker or from the GCP console under pod statistics for the worker.

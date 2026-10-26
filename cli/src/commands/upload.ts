@@ -55,10 +55,10 @@ export async function uploadAction(
     `upload ${dataset_directory} resolved to ${dataset_directory_abs}`,
   )
 
-  // Match OpenNeuro's server side rules for datasetTypes overriding user settings
+  // Match fmbids-openneuro's server side rules for datasetTypes overriding user settings
   options.datasetTypes = ["raw", "derivative"]
 
-  // Use OpenNeuro's schema until datacite.yml is supported upstream
+  // Use fmbids-openneuro's schema until datacite.yml is supported upstream
   const schemaPath = new URL("../schema-1.2.7-datacite.json", import.meta.url)
   options.schema = schemaPath.href
 
@@ -170,7 +170,7 @@ export async function uploadAction(
  */
 export const upload = validateCommand
   .name("upload")
-  .description("Upload a dataset to OpenNeuro")
+  .description("Upload a dataset to fmbids-openneuro")
   .option("--json", "Hidden for upload usage", { hidden: true, override: true })
   .option("--filenameMode", "Hidden for upload usage", {
     hidden: true,

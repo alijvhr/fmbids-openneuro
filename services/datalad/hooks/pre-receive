@@ -103,7 +103,7 @@ function main() {
       refs/tags/*)
         echo ""
         echo $OUTPUT_HR
-        echo "Git tags cannot be pushed to OpenNeuro."
+        echo "Git tags cannot be pushed to fmbids-openneuro."
         echo ""
         echo "To tag your dataset, please create a snapshot via the dataset's"
         echo "page at https://openneuro.org (recommended) or the GraphQL API"

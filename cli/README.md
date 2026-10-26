@@ -3,16 +3,16 @@ name: Command Line Interface
 route: /cli
 ---
 
-# OpenNeuro command line interface
+# fmbids-openneuro command line interface
 
-This tool allows you to upload and download [OpenNeuro.org](https://openneuro.org) datasets without a browser.
+This tool allows you to upload and download [fmbids-openneuro.org](https://openneuro.org) datasets without a browser.
 
 ## Install
 
 1. Install [Deno](https://deno.land/) via [any supported installation method](https://docs.deno.com/runtime/manual/getting_started/installation).
 2. Install with `deno install -A --global jsr:@openneuro/cli -n openneuro`
 
-To download annexed files, you will need the git-annex special remote for OpenNeuro.
+To download annexed files, you will need the git-annex special remote for fmbids-openneuro.
 
 ```shell
 # A script is provided to wrap the CLI as a special remote
@@ -23,14 +23,14 @@ chmod +x git-annex-remote-openneuro
 
 ## Setup
 
-The setup step is needed for both uploading _and_ downloading data from OpenNeuro.
+The setup step is needed for both uploading _and_ downloading data from fmbids-openneuro.
 
 Run `deno run -A jsr:@openneuro/cli login` to configure credentials.
 This prompts you for the required configuration fields and these are saved in Deno's local storage.
 
 `deno run -A jsr:@openneuro/cli login` will require you to enter an API key.
 
-You can obtain an API key via a browser on [OpenNeuro](https://openneuro.org/keygen) after logging to the OpenNeuro platform via one of the provided authentication services (for example ORCID).
+You can obtain an API key via a browser on [fmbids-openneuro](https://openneuro.org/keygen) after logging to the fmbids-openneuro platform via one of the provided authentication services (for example ORCID).
 
 You can also specify this as an option or environment variable.
 
@@ -68,7 +68,7 @@ This command will add or replace any files in the dataset but does not delete an
 
 ### Downloading datasets
 
-Downloads using the CLI will create a DataLad dataset and configure a special remote to retrieve the larger annexed files from OpenNeuro.
+Downloads using the CLI will create a DataLad dataset and configure a special remote to retrieve the larger annexed files from fmbids-openneuro.
 
 To download a snapshot:
 
@@ -101,7 +101,7 @@ To clear temporary local repositories created during uploads or downloads:
 openneuro cache clean
 ```
 
-Use `--dry-run` to inspect which directories would be cleared without deleting them, or `--url <url>` to target a specific OpenNeuro instance.
+Use `--dry-run` to inspect which directories would be cleared without deleting them, or `--url <url>` to target a specific fmbids-openneuro instance.
 
 ### Debugging issues
 
@@ -121,4 +121,4 @@ deno run --reload -A jsr:@openneuro/cli upload --affirmDefaced path\to\dataset
 
 ### Implementation Notes
 
-This tool uses isomorphic git to download, modify, and push datasets using OpenNeuro's [git interface](https://docs.openneuro.org/git.html). Other tools that support git and git-annex repositories such as [DataLad](https://www.datalad.org/) can also be used with the local copy.
+This tool uses isomorphic git to download, modify, and push datasets using fmbids-openneuro's [git interface](https://docs.openneuro.org/git.html). Other tools that support git and git-annex repositories such as [DataLad](https://www.datalad.org/) can also be used with the local copy.
