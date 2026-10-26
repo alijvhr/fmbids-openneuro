@@ -16,8 +16,16 @@ const elasticIndex = "datasets"
  * @param {string} id Dataset accession number id
  * @returns {Promise}
  */
-export const removeDatasetSearchDocument = (id) =>
-  getElasticClient().delete({ id, index: elasticIndex })
+export const removeDatasetSearchDocument = async (id) => {
+  // Subjects first: the dataset delete throws when it was never indexed
+  await getElasticClient().deleteByQuery({
+    index: "fairmbids-subjects",
+    ignore_unavailable: true,
+    conflicts: "proceed",
+    query: { term: { dataset_id: id } },
+  })
+  return getElasticClient().delete({ id, index: elasticIndex })
+}
 
 /**
  * Accepts an array of fields representing the sort order for the search
