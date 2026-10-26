@@ -1,3 +1,4 @@
+import crypto from "crypto"
 import { getElasticClient } from "../../elasticsearch/elastic-client"
 import Permission from "../../models/permission"
 import { decodeCursor, encodeCursor } from "./dataset-search"
@@ -106,5 +107,100 @@ export const fairMBidsSubjects = async (
         Object.entries(result.aggregations).map(([k, agg]) => [k, buckets(agg)]),
       )
       : null,
+  }
+}
+
+const cursorKey = (secret: string) => crypto.createHash("sha256").update(secret).digest()
+
+/** Linkage cursors hold linkage tokens, so they are encrypted rather than base64 encoded */
+export const sealCursor = (value: unknown, secret: string) => {
+  const iv = crypto.randomBytes(12)
+  const cipher = crypto.createCipheriv("aes-256-gcm", cursorKey(secret), iv)
+  const body = Buffer.concat([cipher.update(JSON.stringify(value)), cipher.final()])
+  return Buffer.concat([iv, cipher.getAuthTag(), body]).toString("base64url")
+}
+
+export const openCursor = (cursor: string, secret: string) => {
+  const raw = Buffer.from(cursor, "base64url")
+  const decipher = crypto.createDecipheriv("aes-256-gcm", cursorKey(secret), raw.subarray(0, 12))
+  decipher.setAuthTag(raw.subarray(12, 28))
+  return JSON.parse(Buffer.concat([decipher.update(raw.subarray(28)), decipher.final()]).toString())
+}
+
+/**
+ * Subjects linked across datasets by GSId (Q13), optionally whose datasets
+ * together cover modalitiesAll (Q15). Admin only; disabled without a linkage secret.
+ */
+export const fairMBidsLinkedSubjects = async (
+  obj,
+  { datasetIds, minDatasets = 2, modalitiesAll = [], first = 25, after }: {
+    datasetIds?: string[]
+    minDatasets?: number
+    modalitiesAll?: string[]
+    first?: number
+    after?: string
+  },
+  { user, userInfo }: GraphQLContext,
+) => {
+  const secret = process.env.FAIRMBIDS_LINKAGE_SECRET
+  if (!secret) throw new Error("FAIR m-BIDS subject linkage is disabled")
+  if (!userInfo?.admin) throw new Error("You do not have access to FAIR m-BIDS subject linkage")
+  const size = Math.min(Math.max(first, 1), 100)
+  const result = await getElasticClient().search({
+    index: fairMBidsIndex,
+    size: 0,
+    query: {
+      bool: {
+        filter: [
+          { exists: { field: "linkage.token" } },
+          ...(datasetIds?.length ? [{ terms: { dataset_id: datasetIds } }] : []),
+        ],
+      },
+    },
+    aggs: {
+      linked: {
+        composite: {
+          size,
+          sources: [{ token: { terms: { field: "linkage.token" } } }],
+          ...(after && { after: openCursor(after, secret) }),
+        },
+        aggs: {
+          members: {
+            top_hits: { size: 100, _source: ["dataset_id", "participant_id", "modality_set"] },
+          },
+        },
+      },
+    },
+  })
+  const linked = result.aggregations.linked as {
+    after_key?: unknown
+    buckets: { members: { hits: { hits: { _source: Record<string, never> }[] } } }[]
+  }
+  const required = modalitiesAll.map((m) => m.toLowerCase())
+  const groups = linked.buckets
+    .map((b) => b.members.hits.hits.map(({ _source: s }) => ({
+      datasetId: s.dataset_id,
+      participantId: s.participant_id,
+      modalities: s.modality_set,
+    })))
+    .filter((members) =>
+      new Set(members.map((m) => m.datasetId)).size >= minDatasets &&
+      required.every((r) => members.some((m) => (m.modalities as string[]).includes(r)))
+    )
+  // Audit without tokens or GSIds
+  // eslint-disable-next-line no-console
+  console.log(`FAIR m-BIDS linkage query by ${user}: ${groups.length} groups`)
+  return {
+    edges: groups.map((members) => ({
+      // Opaque and response-scoped, so references cannot be correlated across requests
+      node: { linkedSubjectRef: `link_${crypto.randomBytes(9).toString("base64url")}`, members },
+    })),
+    pageInfo: {
+      count: null,
+      endCursor: linked.after_key ? sealCursor(linked.after_key, secret) : null,
+      hasNextPage: linked.buckets.length === size,
+      startCursor: null,
+      hasPreviousPage: false,
+    },
   }
 }

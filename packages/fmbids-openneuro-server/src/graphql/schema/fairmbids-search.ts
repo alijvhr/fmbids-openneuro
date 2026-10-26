@@ -1,6 +1,9 @@
 import { builder } from "../builder"
 import { PageInfo } from "./pagination"
-import { fairMBidsSubjects } from "../resolvers/fairmbids-search"
+import {
+  fairMBidsLinkedSubjects,
+  fairMBidsSubjects,
+} from "../resolvers/fairmbids-search"
 import type { FairMBidsFilter } from "../resolvers/build-fairmbids-search-query"
 
 const IntRange = builder.inputType("FAIRMBIDSIntRange", {
@@ -163,5 +166,47 @@ builder.queryFields((t) => ({
       facets: t.arg.boolean(),
     },
     resolve: (root, args, ctx) => fairMBidsSubjects(root, args as never, ctx) as never,
+  }),
+}))
+
+const LinkedMember = builder.simpleObject("FAIRMBIDSLinkedMember", {
+  fields: (t) => ({
+    datasetId: t.id(),
+    participantId: t.string(),
+    modalities: t.stringList(),
+  }),
+})
+
+const LinkedSubject = builder.simpleObject("FAIRMBIDSLinkedSubject", {
+  description: "Dataset-local subjects sharing one GSId; the GSId itself is never returned",
+  fields: (t) => ({
+    linkedSubjectRef: t.id({ description: "Opaque, valid only within this response" }),
+    members: t.field({ type: [LinkedMember] }),
+  }),
+})
+
+const LinkedSubjectConnection = builder.simpleObject("FAIRMBIDSLinkedSubjectConnection", {
+  fields: (t) => ({
+    edges: t.field({
+      type: [builder.simpleObject("FAIRMBIDSLinkedSubjectEdge", {
+        fields: (t) => ({ node: t.field({ type: LinkedSubject }) }),
+      })],
+    }),
+    pageInfo: t.field({ type: PageInfo }),
+  }),
+})
+
+builder.queryFields((t) => ({
+  fairMBidsLinkedSubjects: t.field({
+    type: LinkedSubjectConnection,
+    description: "Admin only: subjects linked across datasets by GSId",
+    args: {
+      datasetIds: t.arg.stringList(),
+      minDatasets: t.arg.int(),
+      modalitiesAll: t.arg.stringList(),
+      first: t.arg.int(),
+      after: t.arg.string(),
+    },
+    resolve: (root, args, ctx) => fairMBidsLinkedSubjects(root, args as never, ctx) as never,
   }),
 }))
