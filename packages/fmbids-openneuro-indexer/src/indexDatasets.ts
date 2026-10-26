@@ -1,5 +1,9 @@
 import type { Client as ElasticClient } from "@elastic/elasticsearch"
-import { DatasetsIndex, indexDataset } from "@fmbids-openneuro/search"
+import {
+  DatasetsIndex,
+  FairMBidsSubjectsIndex,
+  indexDataset,
+} from "@fmbids-openneuro/search"
 import type { DatasetQueryResult } from "@fmbids-openneuro/search"
 
 /**
@@ -9,7 +13,10 @@ export const aliasDatasetsIndex = (
   elasticClient: ElasticClient,
 ) =>
   elasticClient.indices.updateAliases({
-    actions: [{ add: { index: DatasetsIndex.name, alias: "datasets" } }],
+    actions: [
+      { add: { index: DatasetsIndex.name, alias: "datasets" } },
+      { add: { index: FairMBidsSubjectsIndex.name, alias: "fairmbids-subjects" } },
+    ],
   })
 
 /**
